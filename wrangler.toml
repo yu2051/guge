@@ -1,0 +1,23 @@
+# wrangler.toml
+name = "guge"
+main = "worker/src/index.ts"
+compatibility_date = "2025-03-27"
+compatibility_flags = ["nodejs_compat"]
+
+[assets]
+binding = "ASSETS"
+directory = "public"
+
+[observability]
+enabled = true
+
+[triggers]
+crons = ["*/30 * * * *"]
+
+[[kv_namespaces]]
+binding = "GEMINI_KEYS_KV"
+id = "d854e5cf47b548c7849a20d55ab7d531"
+
+[[kv_namespaces]]
+binding = "WORKER_CONFIG_KV"
+id = "e29052b18e744fbcb3b241fd1991bf48"
